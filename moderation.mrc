@@ -46,7 +46,6 @@ menu nicklist {
   .../Gline Xeno-Homo:/_modermrc_gline $$1 48h xeno
   .../Gline Religion:/_modermrc_gline $$1 48h religion
   .../Gline Perso:/_modermrc_gline $$1 48h libre
-
   ./Gline ( $+ $_modermrc_getident($$1) $+ @* - 48 heures)
   ../Gline Comportement:/_modermrc_gline $_modermrc_getident($$1) $+ @* 48h comportement
   ../Gline Flood:/_modermrc_gline $_modermrc_getident($$1) $+ @* 48h flood
