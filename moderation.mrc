@@ -35,9 +35,32 @@ menu nicklist {
   ./Gline (*@Host - 48 heures)
   ../Gline Comportement:/_modermrc_gline $$1 48h comportement
   ../Gline Flood:/_modermrc_gline $$1 48h flood
+  ../Gline Pervers:/_modermrc_gline $$1 48h pervers
+  ../Gline Indesirable:/_modermrc_gline $$1 48h indesirable
+  ../Gline Contournement:/_modernmrc_gline $$1 48h contournement
+  ../Gline Spam:/_modermrc_gline $$1 48h spam
+  ..Plus
+  .../Gline Age:/_modermrc_gline $$1 48h age
+  .../Gline VPN:/_modermrc_gline $$1 48h vpn
+  .../Gline Incitation:/_modermrc_gline $$1 48h incitation
+  .../Gline Xeno-Homo:/_modermrc_gline $$1 48h xeno
+  .../Gline Religion:/_modermrc_gline $$1 48h religion
+  .../Gline Perso:/_modermrc_gline $$1 48h libre
+
   ./Gline ( $+ $_modermrc_getident($$1) $+ @* - 48 heures)
-  ../Gline Comportement:/gline $_modermrc_getident($$1) $+ @* 48h :[Exp/Comportement] Attitude délétère n'ayant que pour but de nuire à la bonne tenue des canaux de discussions et/ou au respect des utilisateurs.
-  ../Gline Flood:/gline $_modermrc_getident($$1) $+ @* 48h :[Exp/Flood] La prochaine fois, tu éviteras de t'endormir sur ton clavier ou veillera à ce que ton chat n'utilise celui-ci afin de venir remplir nos canaux de discussions de répétitions insistantes.
+  ../Gline Comportement:/_modermrc_gline $_modermrc_getident($$1) $+ @* 48h comportement
+  ../Gline Flood:/_modermrc_gline $_modermrc_getident($$1) $+ @* 48h flood
+  ../Gline Pervers:/_modermrc_gline $_modermrc_getident($$1) $+ @* 48h pervers
+  ../Gline Indesirable:/_modermrc_gline $_modermrc_getident($$1) $+ @* 48h indesirable
+  ../Gline Contournement:/_modernmrc_gline $_modermrc_getident($$1) $+ @* 48h contournement
+  ../Gline Spam:/_modermrc_gline $_modermrc_getident($$1) $+ @* 48h spam
+  ..Plus
+  .../Gline Age:/_modermrc_gline $_modermrc_getident($$1) $+ @* 48h age
+  .../Gline VPN:/_modermrc_gline $_modermrc_getident($$1) $+ @* 48h vpn
+  .../Gline Incitation:/_modermrc_gline $_modermrc_getident($$1) $+ @* 48h incitation
+  .../Gline Xeno-Homo:/_modermrc_gline $_modermrc_getident($$1) $+ @* 48h xeno
+  .../Gline Religion:/_modermrc_gline $_modermrc_getident($$1) $+ @* 48h religion
+  .../Gline Perso:/_modermrc_gline $_modermrc_getident($$1) $+ @* 48h libre
   .-
   ./Gline (7 jours)
   ./Gline (30 jours)
