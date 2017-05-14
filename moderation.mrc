@@ -16,6 +16,8 @@ menu nicklist {
   .NickUnload:/nickunlock $$1 $$1
   .Sajoin:/sajoin $$1 $$input(Sur quel canal voulez-vous sajoin $$1 ? (N'oubliez pas le #),eok15,Sajoin sur un canal - /Sajoin,#Aide)
   .Sapart:/sapart $$1 #
+  .Check $$1:/check $$1
+  .Wallops:/wallops $$?="Quel est le message que vous souhaitez envoyer ?"
   .-
   ./Kill
   ../Kill Comportement:/kill $$1 [Exp/Comportement] Merci de revoir votre attitude et calmer vos ardeurs sous peines de sanctions ultérieures.
@@ -32,7 +34,7 @@ menu nicklist {
   .-
   ./Gline (*@Host - 48 heures)
   ../Gline Comportement:/_modermrc_gline $$1 48h comportement
-  ../Gline Flood:/_modermrc_gline $$1 48 flood
+  ../Gline Flood:/_modermrc_gline $$1 48h flood
   ./Gline ( $+ $_modermrc_getident($$1) $+ @* - 48 heures)
   ../Gline Comportement:/gline $_modermrc_getident($$1) $+ @* 48h :[Exp/Comportement] Attitude délétère n'ayant que pour but de nuire à la bonne tenue des canaux de discussions et/ou au respect des utilisateurs.
   ../Gline Flood:/gline $_modermrc_getident($$1) $+ @* 48h :[Exp/Flood] La prochaine fois, tu éviteras de t'endormir sur ton clavier ou veillera à ce que ton chat n'utilise celui-ci afin de venir remplir nos canaux de discussions de répétitions insistantes.
@@ -50,7 +52,6 @@ alias -l _modermrc_getident {
 alias _modermrc_gline {
   var %target $1 | var %duree $2 | var %motif $3
   var %expire (Expire le $asctime($calc($ctime + $duration(%duree)),dd/mm/yyyy à HH.nn) $+(GMT,$asctime(z)))
-  echo -a %target - %duree - %motif
   if (%duree == $null) { var %duree 24h }
   elseif (%motif == $null) { var %motif noreason }
   else { goto %motif }
