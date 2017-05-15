@@ -67,7 +67,7 @@ menu nicklist {
 }
 
 alias -l _modermrc_getident {
-  var %nick-ident = $remove($gettok($address($1,3),1,$asc(@)),*!*)
+  var %nick-ident = $ial($1).user
   return %nick-ident
 }
 
